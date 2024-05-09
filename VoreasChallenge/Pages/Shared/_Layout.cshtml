@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>@ViewData["Title"] - VoreasChallenge</title>
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="~/css/site.css" />
+		<link rel="stylesheet" href="~/css/VoreasChallenge.css" />
+	</head>
+	<body>
+		<div class="container">
+			<main role="main" class="pb-3">
+				@RenderBody()
+			</main>
+		</div>
+
+		<script src="~/lib/jquery/dist/jquery.min.js"></script>
+		<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="~/js/site.js" asp-append-version="true"></script>
+
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="~/js/Graph_0.js"></script>
+		<script src="~/js/Graph_1.js"></script>
+		<script src="~/js/Graph_2.js"></script>
+		<script src="~/js/Graph_3.js"></script>
+		<script src="~/js/Graph_4.js"></script>
+		<script src="~/js/Graph_5.js"></script>
+		<script src="~/js/Graph_6.js"></script>
+
+		@await RenderSectionAsync("Scripts", required: false)
+	</body>
+</html>

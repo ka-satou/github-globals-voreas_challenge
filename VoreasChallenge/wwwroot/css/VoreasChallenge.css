@@ -1,0 +1,222 @@
+div { color:black; }
+.field00 {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #333333
+}
+.field01 {
+	display: flex;
+}
+.field02 {
+	flex: 1;
+}
+.field03 {
+	flex: 1;
+}
+.field04 {
+	flex: 2;
+}
+.field10 {
+	display: flex;
+}
+.field11 {
+	flex: 1; 
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #333333
+}
+.field20 {
+	display: flex;
+	margin-bottom: 10px;
+}
+.field21 {
+	flex: 1; 
+}
+.field22 {
+	flex: 10; 
+	background-color: red;
+}
+.image20 {
+	height: 70px;
+	width: 100%;
+}
+.image21 {
+	height: 61px;
+	width: 100%;
+}
+.field30 {
+	display: flex;
+	margin-bottom: 10px;
+}
+.field31 {
+	flex: 3; 
+	background-color: red;
+}
+.field32 {
+	flex: 4; 
+	margin-left: 5px;
+	background-color: red;
+}
+.field33 {
+	flex: 2; 
+	margin-left: 5px;
+}
+.tablestyle30 {
+	background-color: white;
+	color: white;
+}
+.tablestyle31 {
+	background-color: red;
+	color: white;
+}
+.tablestyle32 {
+	background-color: white;
+	padding-left: 2px;
+}
+.image30 {
+	width: 100%;
+}
+.field40 {
+	display: flex;
+	margin-bottom: 10px;
+}
+.field41 {
+	flex: 1; 
+}
+.field42 {
+	flex: 1; 
+	margin-top: 17px;
+	background-color: red;
+}
+.field43 {
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	height: 100%;
+	width: 100%;
+}
+.image40 {
+	height: 100%;
+	width: 100%;
+}
+.field50 {
+	margin-bottom: 10px;
+}
+.image50 {
+	width: 100%;
+}
+.field60 {
+	font-size: small;
+	text-align: left;
+}
+.field70 {
+	display: flex;
+}
+.field71 {
+	flex: 2; 
+	height: 70px;
+}
+.field72 {
+	flex: 2.8; 
+	height: 35px;
+	margin-top: 35px;
+	background-color: red;
+}
+.field73 {
+	flex: 2; 
+	height: 70px;
+}
+.field74 {
+	height: 19px;
+}
+.field75 {
+	height: 51px;
+	color: red;
+	background-color: red;
+}
+.image70 {
+	height: 70px;
+	width: 100%;
+}
+.image71 {
+	height: 35px;
+	width: 100%;
+}
+.field80 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.field81 {
+	height: 330px;
+	width: 100%;
+	background-color: red;
+}
+.field82 {
+	margin-left: 15px;
+	height: 10%;
+	width: 30%;
+}
+.field83 {
+	margin-left: 5px;
+	height: 10%;
+	width: 30%;
+}
+.field84 {
+	margin-left: 15px;
+	height: 88%;
+	width: 95%;
+}
+.field85 {
+	margin-left: 5px;
+	height: 88%;
+	width: 95%;
+}
+.image80 {
+	height: 100%;
+	width: 100%;
+}
+.field90 {
+	font-size: small;
+	text-align: left;
+}
+.field100 {
+	height: 8%;
+	width: 100%;
+}
+.image100 {
+	height: 100%;
+	width: 100%;
+}
+.field110 {
+	display: flex;
+	height: 5%;
+	width: 98.5%;
+	margin-top: 10px;
+	padding: 5px;
+	border: 1px solid #333333;
+	border-radius: 10px;
+}
+.field111 {
+	flex: 4; 
+}
+.field112 {
+	flex: 1; 
+}
+.field113 {
+	flex: 4;
+}
+.field114 {
+	flex: 2;
+}
+.image110 {
+	height: 100%;
+	width: 100%;
+}
+.image111 {
+	height: 68%;
+	width: 100%;
+}
+span {
+	color: red;
+}

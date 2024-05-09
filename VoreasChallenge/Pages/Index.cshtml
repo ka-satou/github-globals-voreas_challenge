@@ -1,0 +1,225 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <!--
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    -->
+	<div class="field00">
+		<div class="field01">
+			<div class="field02">
+				<!-- IDデータ入力 -->
+				<label>
+					ID
+					<input type="text" id="idinput">
+				</label>
+			</div>
+			<div class="field03">
+				<!-- データ入力ボタン -->
+				<button type="button">データ入力</button>
+			</div>
+			<div class="field04">
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="field10">
+		<div class="field11">
+			<!-- 画面タイトル -->
+			<div class="field20">
+				<div class="field21">
+					<img class="image20" src="~/images/mark.png" />
+				</div>
+				<div class="field22">
+					<img class="image21" src="~/images/title.png" />
+				</div>
+			</div>
+			<!-- データ入力表 -->
+			<div class="field30">
+				<div class="field31">
+					<table width="100%" border="4" bordercolor="red">
+						<thead>
+							<tr>
+								<th class="tablestyle30">A</th>
+								<th class="tablestyle30">A</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th align="center" class="tablestyle31">ID</th>
+								<td align="left" class="tablestyle32">0</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">種別</th>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">名前</th>
+								<td align="left" class="tablestyle32">ヴォレアス</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">学年</th>
+								<td align="left" class="tablestyle32">大4</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">性別</th>
+								<td align="left" class="tablestyle32">男</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="field32">
+					<table width="100%" border="4" bordercolor="red">
+						<thead>
+							<tr align="center">
+								<th class="tablestyle30">A</th>
+								<th class="tablestyle31">測定値</th>
+								<th class="tablestyle31">学年</th>
+								<th class="tablestyle31">種目</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th align="center" class="tablestyle31">今回</th>
+								<td align="left" class="tablestyle32">2022/4/22</td>
+								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">前回①</th>
+								<td align="left" class="tablestyle32">2022/4/22</td>
+								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">前回②</th>
+								<td align="left" class="tablestyle32">2022/4/22</td>
+								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">前回③</th>
+								<td align="left" class="tablestyle32">2022/4/22</td>
+								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+							<tr>
+								<th align="center" class="tablestyle31">前回④</th>
+								<td align="left" class="tablestyle32">2022/4/22</td>
+								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">バレーボール</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="field33">
+					<img class="image30" src="~/images/player.png" />
+				</div>
+			</div>
+			<!-- 体格データ表/グラフ -->
+			<div class="field40">
+				<div class="field41">
+					<img class="image40" src="~/images/taikakuwaku.png" />
+				</div>
+				<div class="field42">
+					<div id="taikaku_chart" class="field43">
+					</div>
+				</div>
+			</div>
+			<!-- 体力/運動能力結果 -->
+			<div class="field50">
+				<img class="image50" src="~/images/nouryokuwaku.png" />
+			</div>
+			<!-- 体力/運動能力結果 -->
+			<div class="field60">
+				<p>個人の評価は<span>測定時の年齢（●歳●ヶ月）</span>に基づいて5段階で評価しています（”<span>★</span>”が多いほど、評価が高いことを示しています）。全体・種目・チーム平均の評価は，<span>各学年・性別毎の平均値</span>を基に算出しています。</p>
+			</div>
+		</div>
+		<div class="field11">
+			<!-- 体力/運動能力グラフ -->
+			<div class="field70">
+				<div class="field71">
+					<img class="image70" src="~/images/graph.png" />
+				</div>
+				<div class="field72">
+				</div>
+				<div class="field73">
+					<div class="field74">
+						<img class="image71" src="~/images/avreg.png" />
+					</div>
+					<div class="field75">
+						<p>A</p>
+					</div>
+				</div>
+			</div>
+			<div class="field80">
+				<div class="field81">
+					<div class="field82">
+						<img class="image80" src="~/images/20mrun.png" />
+					</div>
+					<div id="noryoku1_chart" class="field84">
+					</div>
+				</div>
+				<div class="field81">
+					<div class="field83">
+						<img class="image80" src="~/images/proji.png" />
+					</div>
+					<div id="noryoku2_chart" class="field85">
+					</div>
+				</div>
+				<div class="field81">
+					<div class="field82">
+						<img class="image80" src="~/images/tachhaba.png" />
+					</div>
+					<div id="noryoku3_chart" class="field84">
+					</div>
+				</div>
+				<div class="field81">
+					<div class="field83">
+						<img class="image80" src="~/images/hantobi.png" />
+					</div>
+					<div id="noryoku4_chart" class="field85">
+					</div>
+				</div>
+				<div class="field81">
+					<div class="field82">
+						<img class="image80" src="~/images/suitobi.png" />
+					</div>
+					<div id="noryoku5_chart" class="field84">
+					</div>
+				</div>
+				<div class="field81">
+					<div class="field83">
+						<img class="image80" src="~/images/rebundjmp.png" />
+					</div>
+					<div id="noryoku6_chart" class="field85">
+					</div>
+				</div>
+			</div>
+			<div class="field90">
+				<p>赤色のグラフは測定値で、赤丸の場所から得点を判断することができます（<span>5点</span>は1.5 SDより優れている、<span>4点</span>は1.5 SDと0.5 SDの間、<span>3点</span>は-0.5 SDと0.5 SDの間、<span>2点</span>は-0.5 SDと-1.5 SDの間、<span>1点</span>は-1.5 SDより劣る）。</p>
+			</div>
+			<div class="field100">
+				<img class="image100" src="~/images/personInfo.png" />
+			</div>
+			<div class="field110">
+				<div class="field111">
+					<img class="image110" src="~/images/vconm.png" />
+				</div>
+				<div class="field112">
+					<img class="image110" src="~/images/spconm.png" />
+				</div>
+				<div class="field113">
+					<img class="image111" src="~/images/gsconm.png" />
+				</div>
+				<div class="field114">
+					<img class="image110" src="~/images/ntconm.png" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
