@@ -16,11 +16,11 @@ namespace VoreasChallenge.Models
 		[DataType(DataType.Date)]
 		public DateTime MeasureDay { get; set; }		// 測定日
 
-		public double Run20m { get; set; }				// 20m走
-		public double ProAgility { get; set; }			// プロアジティ
-		public double StandJump { get; set; }			// 立幅跳び
-		public double RepetJump { get; set; }			// 反復横跳び
-		public double VerticalJump { get; set; }		// 垂直跳び
-		public double ReboundJumpIndex { get; set; }	// リバウウンドジャンプ指数
+		public float Run20m { get; set; }				// 20m走
+		public float ProAgility { get; set; }			// プロアジティ
+		public float StandJump { get; set; }			// 立幅跳び
+		public float RepetJump { get; set; }			// 反復横跳び
+		public float VerticalJump { get; set; }		// 垂直跳び
+		public float ReboundJumpIndex { get; set; }	// リバウウンドジャンプ指数
 	}
 }
