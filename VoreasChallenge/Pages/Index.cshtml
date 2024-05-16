@@ -38,23 +38,23 @@
 						<tbody>
 							<tr>
 								<th align="center" class="tablestyle31">ID</th>
-								<td align="left" class="tablestyle32">0</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.PersonalData.ID)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">種別</th>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.PersonalData.SportsType)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">名前</th>
-								<td align="left" class="tablestyle32">ヴォレアス</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.PersonalData.Name)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">学年</th>
-								<td align="left" class="tablestyle32">大4</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.PersonalData.Grade)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">性別</th>
-								<td align="left" class="tablestyle32">男</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.PersonalData.Sex)</td>
 							</tr>
 						</tbody>
 					</table>

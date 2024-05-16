@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,9 +12,10 @@ namespace VoreasChallenge.Models
 	/// </summary>
 	public class PhysicalData
 	{
+		[Key, Column(Order = 1)]
 		public int ID { get; set; }							// データID
 
-		[DataType(DataType.Date)]
+		[Key, Column(Order = 2), DataType(DataType.Date)]
 		public DateTime MeasureDay { get; set; }			// 測定日
 
 		public float Height { get; set; }					// 身長

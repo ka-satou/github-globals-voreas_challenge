@@ -11,13 +11,14 @@ namespace VoreasChallenge.Models
 	/// </summary>
 	public class PersonalData
 	{
+		[Key]
 		public int ID { get; set; }					// データID
-		public int SportsType { get; set; }		// スポーツタイプ
+		public int SportsType { get; set; }			// スポーツタイプ
 		public string Name { get; set; }			// 名前
 		public int Grade { get; set; }				// 学年
 		public int Sex { get; set; }				// 性別
 
 		[DataType(DataType.Date)]
-		public DateTime BirthDay { get; set; }		// 測定日
+		public DateTime BirthDay { get; set; }		// 誕生日
 	}
 }

@@ -20,5 +20,21 @@ namespace VoreasChallenge.Data
 		public DbSet<SportsTypeMaster> SportsTypeMaster { get; set; }	// スポーツタイプマスターインターフェース
 		public DbSet<GradeMaster> GradeMaster { get; set; }				// 学年マスターインターフェース
 		public DbSet<SexMaster> SexMaster { get; set; }					// 性別マスターインターフェース
+
+
+		// 複合キーテーブルは以下にHasKeyを設定する必要がある。
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<PhysicalData>().HasKey(phydata => new { phydata.ID, phydata.MeasureDay });
+			modelBuilder.Entity<CapacityResult>().HasKey(caprslt => new { caprslt.ID, caprslt.MeasureDay });
+		}
+
+
+
+
+
+
+
+
 	}
 }

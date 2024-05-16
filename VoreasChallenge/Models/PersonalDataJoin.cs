@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VoreasChallenge.Models
 {
+	/// <summary>
+	/// 個人データマスターデータ結合クラス
+	/// </summary>
 	public class PersonalDataJoin
 	{
 		public int ID { get; set; }					// データID
