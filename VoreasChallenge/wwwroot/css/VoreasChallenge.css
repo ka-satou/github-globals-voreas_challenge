@@ -70,29 +70,981 @@ div { color:black; }
 	margin-bottom: 10px;
 }
 .field41 {
-	flex: 1; 
+	flex: 1;
+	position: relative;
 }
-.field42 {
-	flex: 1; 
+.image40 {
+	height: 100%;
+	width: 100%;
+}
+.field410 {
+	position: absolute;
+	top: 17.9%;
+	left: 13.2%;
+	height: 4.3%;
+	width: 16.1%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 14px;
+}
+.field411 {
+	position: absolute;
+	top: 17.9%;
+	left: 29.3%;
+	height: 4.3%;
+	width: 16.1%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 14px;
+}
+.field412 {
+	position: absolute;
+	top: 17.9%;
+	left: 45.4%;
+	height: 4.3%;
+	width: 16.1%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 14px;
+}
+.field413 {
+	position: absolute;
+	top: 17.9%;
+	left: 61.5%;
+	height: 4.3%;
+	width: 16.1%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 14px;
+}
+.field414 {
+	position: absolute;
+	top: 17.9%;
+	left: 77.5%;
+	height: 4.3%;
+	width: 19.0%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 15px;
+}
+.field420 {
+	position: absolute;
+	top: 25.1%;
+	left: 13.2%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field421 {
+	position: absolute;
+	top: 25.1%;
+	left: 29.3%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field422 {
+	position: absolute;
+	top: 25.1%;
+	left: 45.4%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field423 {
+	position: absolute;
+	top: 25.1%;
+	left: 61.5%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field424 {
+	position: absolute;
+	top: 25.1%;
+	left: 77.5%;
+	height: 12.3%;
+	width: 19.0%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 15px;
+}
+.field430 {
+	position: absolute;
+	top: 39.4%;
+	left: 13.2%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field431 {
+	position: absolute;
+	top: 39.4%;
+	left: 29.3%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field432 {
+	position: absolute;
+	top: 39.4%;
+	left: 45.4%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field433 {
+	position: absolute;
+	top: 39.4%;
+	left: 61.5%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field434 {
+	position: absolute;
+	top: 39.4%;
+	left: 77.5%;
+	height: 12.3%;
+	width: 19.0%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 15px;
+}
+.field440 {
+	position: absolute;
+	top: 53.5%;
+	left: 13.2%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field441 {
+	position: absolute;
+	top: 53.5%;
+	left: 29.3%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field442 {
+	position: absolute;
+	top: 53.5%;
+	left: 45.4%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field443 {
+	position: absolute;
+	top: 53.5%;
+	left: 61.5%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field444 {
+	position: absolute;
+	top: 53.5%;
+	left: 77.5%;
+	height: 12.3%;
+	width: 19.0%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 15px;
+}
+.field450 {
+	position: absolute;
+	top: 67.8%;
+	left: 13.2%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field451 {
+	position: absolute;
+	top: 67.8%;
+	left: 29.3%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field452 {
+	position: absolute;
+	top: 67.8%;
+	left: 45.4%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field453 {
+	position: absolute;
+	top: 67.8%;
+	left: 61.5%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field454 {
+	position: absolute;
+	top: 67.8%;
+	left: 77.5%;
+	height: 12.3%;
+	width: 19.0%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 15px;
+}
+.field460 {
+	position: absolute;
+	top: 81.9%;
+	left: 13.2%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field461 {
+	position: absolute;
+	top: 81.8%;
+	left: 29.3%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field462 {
+	position: absolute;
+	top: 81.9%;
+	left: 45.4%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field463 {
+	position: absolute;
+	top: 81.9%;
+	left: 61.5%;
+	height: 12.3%;
+	width: 16.1%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 14px;
+}
+.field464 {
+	position: absolute;
+	top: 81.9%;
+	left: 77.5%;
+	height: 12.3%;
+	width: 19.0%;
+	transform: translateY(30%);
+	color: black;
+	font-size: 15px;
+}
+.field47 {
+	flex: 1;
 	margin-top: 17px;
 	background-color: red;
 }
-.field43 {
+.field48 {
 	margin-top: 5px;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	height: 100%;
 	width: 100%;
 }
-.image40 {
-	height: 100%;
-	width: 100%;
-}
 .field50 {
 	margin-bottom: 10px;
+	position: relative;
 }
 .image50 {
 	width: 100%;
+}
+.field510 {
+	position: absolute;
+	top: 12.4%;
+	left: 33.0%;
+	height: 5.8%;
+	width: 8.4%;
+	transform: translateY(25%);
+	color: white;
+	font-size: 14px;
+}
+.field511 {
+	position: absolute;
+	top: 12.4%;
+	left: 41.4%;
+	height: 5.8%;
+	width: 8.4%;
+	transform: translateY(25%);
+	color: white;
+	font-size: 14px;
+}
+.field512 {
+	position: absolute;
+	top: 12.4%;
+	left: 49.9%;
+	height: 5.8%;
+	width: 8.4%;
+	transform: translateY(25%);
+	color: white;
+	font-size: 14px;
+}
+.field513 {
+	position: absolute;
+	top: 12.4%;
+	left: 58.3%;
+	height: 5.8%;
+	width: 8.4%;
+	transform: translateY(25%);
+	color: white;
+	font-size: 14px;
+}
+.field514 {
+	position: absolute;
+	top: 12.4%;
+	left: 66.7%;
+	height: 5.8%;
+	width: 10.0%;
+	transform: translateY(25%);
+	color: white;
+	font-size: 15px;
+}
+.field520 {
+	position: absolute;
+	top: 20.0%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field521 {
+	position: absolute;
+	top: 20.0%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field522 {
+	position: absolute;
+	top: 20.0%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field523 {
+	position: absolute;
+	top: 20.0%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field524 {
+	position: absolute;
+	top: 20.0%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field525 {
+	position: absolute;
+	top: 25.1%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field526 {
+	position: absolute;
+	top: 25.1%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field527 {
+	position: absolute;
+	top: 25.1%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field528 {
+	position: absolute;
+	top: 25.1%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field529 {
+	position: absolute;
+	top: 25.1%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field530 {
+	position: absolute;
+	top: 32.0%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field531 {
+	position: absolute;
+	top: 32.0%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field532 {
+	position: absolute;
+	top: 32.0%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field533 {
+	position: absolute;
+	top: 32.0%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field534 {
+	position: absolute;
+	top: 32.0%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field535 {
+	position: absolute;
+	top: 37.1%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field536 {
+	position: absolute;
+	top: 37.1%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field537 {
+	position: absolute;
+	top: 37.1%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field538 {
+	position: absolute;
+	top: 37.1%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field539 {
+	position: absolute;
+	top: 37.1%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field540 {
+	position: absolute;
+	top: 44.1%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field541 {
+	position: absolute;
+	top: 43.9%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field542 {
+	position: absolute;
+	top: 43.9%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field543 {
+	position: absolute;
+	top: 43.9%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field544 {
+	position: absolute;
+	top: 43.9%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field545 {
+	position: absolute;
+	top: 49.2%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field546 {
+	position: absolute;
+	top: 49.2%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field547 {
+	position: absolute;
+	top: 49.2%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field548 {
+	position: absolute;
+	top: 49.2%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field549 {
+	position: absolute;
+	top: 49.2%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field550 {
+	position: absolute;
+	top: 55.9%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field551 {
+	position: absolute;
+	top: 55.9%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field552 {
+	position: absolute;
+	top: 55.9%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field553 {
+	position: absolute;
+	top: 55.9%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field554 {
+	position: absolute;
+	top: 55.9%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field555 {
+	position: absolute;
+	top: 61.0%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field556 {
+	position: absolute;
+	top: 61.0%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field557 {
+	position: absolute;
+	top: 61.0%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field558 {
+	position: absolute;
+	top: 61.0%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field559 {
+	position: absolute;
+	top: 61.0%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field560 {
+	position: absolute;
+	top: 68.1%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field561 {
+	position: absolute;
+	top: 68.1%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field562 {
+	position: absolute;
+	top: 68.1%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field563 {
+	position: absolute;
+	top: 68.1%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field564 {
+	position: absolute;
+	top: 68.1%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field565 {
+	position: absolute;
+	top: 73.1%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field566 {
+	position: absolute;
+	top: 73.1%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field567 {
+	position: absolute;
+	top: 73.1%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field568 {
+	position: absolute;
+	top: 73.1%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field569 {
+	position: absolute;
+	top: 73.1%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field570 {
+	position: absolute;
+	top: 80.0%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: black;
+	font-size: 14px;
+}
+.field571 {
+	position: absolute;
+	top: 80.0%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field572 {
+	position: absolute;
+	top: 80.0%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field573 {
+	position: absolute;
+	top: 80.0%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 14px;
+}
+.field574 {
+	position: absolute;
+	top: 80.0%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(40%);
+	color: black;
+	font-size: 15px;
+}
+.field575 {
+	position: absolute;
+	top: 85.0%;
+	left: 33.0%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field576 {
+	position: absolute;
+	top: 85.0%;
+	left: 41.4%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field577 {
+	position: absolute;
+	top: 85.0%;
+	left: 49.9%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field578 {
+	position: absolute;
+	top: 85.0%;
+	left: 58.3%;
+	height: 5.1%;
+	width: 8.4%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
+}
+.field579 {
+	position: absolute;
+	top: 85.0%;
+	left: 66.7%;
+	height: 5.1%;
+	width: 10.0%;
+	transform: translateY(45%);
+	color: red;
+	font-size: 14px;
 }
 .field60 {
 	font-size: small;

@@ -14,7 +14,7 @@ namespace VoreasChallenge.Models
 		public int ID { get; set; }						// データID
 
 		[DataType(DataType.Date)]
-		public DateTime MeasureDay { get; set; }			// 測定日
+		public DateTime? MeasureDay { get; set; }			// 測定日
 		public string Grade { get; set; }					// 学年
 		public string SportsType { get; set; }				// スポーツタイプ
 	}

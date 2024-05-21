@@ -150,12 +150,24 @@ namespace VoreasChallenge.Pages
 					CapacityResults.Add(capacityResultData);
 				}
 			}
+
+			// 空の行を追加
+			if(caprslt.Count< 5)
+			{
+				for(int index = caprslt.Count; index < 5; index++)
+				{
+					MeasureHistory measureHistory = new MeasureHistory();
+					MeasureHistorys.Add(measureHistory);
+					CapacityResultData capacityResultData = new CapacityResultData();
+					CapacityResults.Add(capacityResultData);
+				}
+			}
 		}
 
 		// ページ読み出しのときにコールされる。
 		public void OnGet()
 		{
-			int? id = 0;		// ID入力値を取得
+			int? id = 1;		// ID入力値を取得
 
 			if (id == null)
 			{

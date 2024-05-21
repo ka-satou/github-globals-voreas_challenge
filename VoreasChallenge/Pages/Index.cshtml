@@ -64,7 +64,7 @@
 						<thead>
 							<tr align="center">
 								<th class="tablestyle30">A</th>
-								<th class="tablestyle31">測定値</th>
+								<th class="tablestyle31">測定日</th>
 								<th class="tablestyle31">学年</th>
 								<th class="tablestyle31">種目</th>
 							</tr>
@@ -72,33 +72,33 @@
 						<tbody>
 							<tr>
 								<th align="center" class="tablestyle31">今回</th>
-								<td align="left" class="tablestyle32">2022/4/22</td>
-								<td align="left" class="tablestyle32">大4</td>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[0].MeasureDay)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[0].Grade)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[0].SportsType)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">前回①</th>
-								<td align="left" class="tablestyle32">2022/4/22</td>
-								<td align="left" class="tablestyle32">大4</td>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[1].MeasureDay)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[1].Grade)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[1].SportsType)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">前回②</th>
-								<td align="left" class="tablestyle32">2022/4/22</td>
-								<td align="left" class="tablestyle32">大4</td>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[2].MeasureDay)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[2].Grade)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[2].SportsType)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">前回③</th>
-								<td align="left" class="tablestyle32">2022/4/22</td>
-								<td align="left" class="tablestyle32">大4</td>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[3].MeasureDay)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[3].Grade)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[3].SportsType)</td>
 							</tr>
 							<tr>
 								<th align="center" class="tablestyle31">前回④</th>
-								<td align="left" class="tablestyle32">2022/4/22</td>
-								<td align="left" class="tablestyle32">大4</td>
-								<td align="left" class="tablestyle32">バレーボール</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[4].MeasureDay)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[4].Grade)</td>
+								<td align="left" class="tablestyle32">@Html.DisplayFor(model => model.MeasureHistorys[4].SportsType)</td>
 							</tr>
 						</tbody>
 					</table>
@@ -111,15 +111,300 @@
 			<div class="field40">
 				<div class="field41">
 					<img class="image40" src="~/images/taikakuwaku.png" />
+					<div class="field410">
+						<p>AAAA</p>
+					</div>
+					<div class="field411">
+						<p>BBBB</p>
+					</div>
+					<div class="field412">
+						<p>CCCC</p>
+					</div>
+					<div class="field413">
+						<p>DDDD</p>
+					</div>
+					<div class="field414">
+						<p>EEEE</p>
+					</div>
+					<div class="field420">
+						<p>AA00</p>
+					</div>
+					<div class="field421">
+						<p>BB00</p>
+					</div>
+					<div class="field422">
+						<p>CC00</p>
+					</div>
+					<div class="field423">
+						<p>DD00</p>
+					</div>
+					<div class="field424">
+						<p><b>EE00</b></p>
+					</div>
+					<div class="field430">
+						<p>AA01</p>
+					</div>
+					<div class="field431">
+						<p>BB01</p>
+					</div>
+					<div class="field432">
+						<p>CC01</p>
+					</div>
+					<div class="field433">
+						<p>DD01</p>
+					</div>
+					<div class="field434">
+						<p><b>EE01</b></p>
+					</div>
+					<div class="field440">
+						<p>AA02</p>
+					</div>
+					<div class="field441">
+						<p>BB02</p>
+					</div>
+					<div class="field442">
+						<p>CC02</p>
+					</div>
+					<div class="field443">
+						<p>DD02</p>
+					</div>
+					<div class="field444">
+						<p><b>EE02</b></p>
+					</div>
+					<div class="field450">
+						<p>AA03</p>
+					</div>
+					<div class="field451">
+						<p>BB03</p>
+					</div>
+					<div class="field452">
+						<p>CC03</p>
+					</div>
+					<div class="field453">
+						<p>DD03</p>
+					</div>
+					<div class="field454">
+						<p><b>EE03</b></p>
+					</div>
+					<div class="field460">
+						<p>AA04</p>
+					</div>
+					<div class="field461">
+						<p>BB04</p>
+					</div>
+					<div class="field462">
+						<p>CC04</p>
+					</div>
+					<div class="field463">
+						<p>DD04</p>
+					</div>
+					<div class="field464">
+						<p><b>EE04</b></p>
+					</div>
 				</div>
-				<div class="field42">
-					<div id="taikaku_chart" class="field43">
+				<div class="field47">
+					<div id="taikaku_chart" class="field48">
 					</div>
 				</div>
 			</div>
 			<!-- 体力/運動能力結果 -->
 			<div class="field50">
 				<img class="image50" src="~/images/nouryokuwaku.png" />
+				<div class="field510">
+					<p>AAAA</p>
+				</div>
+				<div class="field511">
+					<p>BBBB</p>
+				</div>
+				<div class="field512">
+					<p>CCCC</p>
+				</div>
+				<div class="field513">
+					<p>DDDD</p>
+				</div>
+				<div class="field514">
+					<p>EEEE</p>
+				</div>
+				<div class="field520">
+					<p>AA00</p>
+				</div>
+				<div class="field521">
+					<p>BB00</p>
+				</div>
+				<div class="field522">
+					<p>CC00</p>
+				</div>
+				<div class="field523">
+					<p>DD00</p>
+				</div>
+				<div class="field524">
+					<p><b>EE00</b></p>
+				</div>
+				<div class="field525">
+					<p>★★★★★</p>
+				</div>
+				<div class="field526">
+					<p>★★★★★</p>
+				</div>
+				<div class="field527">
+					<p>★★★★★</p>
+				</div>
+				<div class="field528">
+					<p>★★★★★</p>
+				</div>
+				<div class="field529">
+					<p>★★★★★</p>
+				</div>
+				<div class="field530">
+					<p>AA01</p>
+				</div>
+				<div class="field531">
+					<p>BB01</p>
+				</div>
+				<div class="field532">
+					<p>CC01</p>
+				</div>
+				<div class="field533">
+					<p>DD01</p>
+				</div>
+				<div class="field534">
+					<p><b>EE01</b></p>
+				</div>
+				<div class="field535">
+					<p>★★★★★</p>
+				</div>
+				<div class="field536">
+					<p>★★★★★</p>
+				</div>
+				<div class="field537">
+					<p>★★★★★</p>
+				</div>
+				<div class="field538">
+					<p>★★★★★</p>
+				</div>
+				<div class="field539">
+					<p>★★★★★</p>
+				</div>
+				<div class="field540">
+					<p>AA02</p>
+				</div>
+				<div class="field541">
+					<p>BB02</p>
+				</div>
+				<div class="field542">
+					<p>CC02</p>
+				</div>
+				<div class="field543">
+					<p>DD02</p>
+				</div>
+				<div class="field544">
+					<p><b>EE02</b></p>
+				</div>
+				<div class="field545">
+					<p>★★★★★</p>
+				</div>
+				<div class="field546">
+					<p>★★★★★</p>
+				</div>
+				<div class="field547">
+					<p>★★★★★</p>
+				</div>
+				<div class="field548">
+					<p>★★★★★</p>
+				</div>
+				<div class="field549">
+					<p>★★★★★</p>
+				</div>
+				<div class="field550">
+					<p>AA03</p>
+				</div>
+				<div class="field551">
+					<p>BB03</p>
+				</div>
+				<div class="field552">
+					<p>CC03</p>
+				</div>
+				<div class="field553">
+					<p>DD03</p>
+				</div>
+				<div class="field554">
+					<p><b>EE03</b></p>
+				</div>
+				<div class="field555">
+					<p>★★★★★</p>
+				</div>
+				<div class="field556">
+					<p>★★★★★</p>
+				</div>
+				<div class="field557">
+					<p>★★★★★</p>
+				</div>
+				<div class="field558">
+					<p>★★★★★</p>
+				</div>
+				<div class="field559">
+					<p>★★★★★</p>
+				</div>
+				<div class="field560">
+					<p>AA04</p>
+				</div>
+				<div class="field561">
+					<p>BB04</p>
+				</div>
+				<div class="field562">
+					<p>CC04</p>
+				</div>
+				<div class="field563">
+					<p>DD04</p>
+				</div>
+				<div class="field564">
+					<p><b>EE04</b></p>
+				</div>
+				<div class="field565">
+					<p>★★★★★</p>
+				</div>
+				<div class="field566">
+					<p>★★★★★</p>
+				</div>
+				<div class="field567">
+					<p>★★★★★</p>
+				</div>
+				<div class="field568">
+					<p>★★★★★</p>
+				</div>
+				<div class="field569">
+					<p>★★★★★</p>
+				</div>
+				<div class="field570">
+					<p>AA05</p>
+				</div>
+				<div class="field571">
+					<p>BB05</p>
+				</div>
+				<div class="field572">
+					<p>CC05</p>
+				</div>
+				<div class="field573">
+					<p>DD05</p>
+				</div>
+				<div class="field574">
+					<p><b>EE05</b></p>
+				</div>
+				<div class="field575">
+					<p>★★★★★</p>
+				</div>
+				<div class="field576">
+					<p>★★★★★</p>
+				</div>
+				<div class="field577">
+					<p>★★★★★</p>
+				</div>
+				<div class="field578">
+					<p>★★★★★</p>
+				</div>
+				<div class="field579">
+					<p>★★★★★</p>
+				</div>
 			</div>
 			<!-- 体力/運動能力結果 -->
 			<div class="field60">
