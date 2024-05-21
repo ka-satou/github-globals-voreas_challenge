@@ -83,9 +83,9 @@ div { color:black; }
 	left: 13.2%;
 	height: 4.3%;
 	width: 16.1%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field411 {
 	position: absolute;
@@ -93,9 +93,9 @@ div { color:black; }
 	left: 29.3%;
 	height: 4.3%;
 	width: 16.1%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field412 {
 	position: absolute;
@@ -103,9 +103,9 @@ div { color:black; }
 	left: 45.4%;
 	height: 4.3%;
 	width: 16.1%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field413 {
 	position: absolute;
@@ -113,9 +113,9 @@ div { color:black; }
 	left: 61.5%;
 	height: 4.3%;
 	width: 16.1%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field414 {
 	position: absolute;
@@ -123,9 +123,9 @@ div { color:black; }
 	left: 77.5%;
 	height: 4.3%;
 	width: 19.0%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	color: white;
-	font-size: 15px;
+	font-size: 13px;
 }
 .field420 {
 	position: absolute;
@@ -402,9 +402,9 @@ div { color:black; }
 	left: 33.0%;
 	height: 5.8%;
 	width: 8.4%;
-	transform: translateY(25%);
+	transform: translateY(28%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field511 {
 	position: absolute;
@@ -412,9 +412,9 @@ div { color:black; }
 	left: 41.4%;
 	height: 5.8%;
 	width: 8.4%;
-	transform: translateY(25%);
+	transform: translateY(28%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field512 {
 	position: absolute;
@@ -422,9 +422,9 @@ div { color:black; }
 	left: 49.9%;
 	height: 5.8%;
 	width: 8.4%;
-	transform: translateY(25%);
+	transform: translateY(28%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field513 {
 	position: absolute;
@@ -432,9 +432,9 @@ div { color:black; }
 	left: 58.3%;
 	height: 5.8%;
 	width: 8.4%;
-	transform: translateY(25%);
+	transform: translateY(28%);
 	color: white;
-	font-size: 14px;
+	font-size: 12px;
 }
 .field514 {
 	position: absolute;
@@ -444,7 +444,7 @@ div { color:black; }
 	width: 10.0%;
 	transform: translateY(25%);
 	color: white;
-	font-size: 15px;
+	font-size: 13px;
 }
 .field520 {
 	position: absolute;
