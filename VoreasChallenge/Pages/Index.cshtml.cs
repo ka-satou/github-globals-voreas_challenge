@@ -33,7 +33,7 @@ namespace VoreasChallenge.Pages
 
 		public PersonalDataJoin PersonalData { get; set; }				// 個人データ
 		public IList<MeasureHistory> MeasureHistorys { get; set; }		// 測定履歴データ
-		public IList<PhysicalData> PhysicalDatas { get; set; }			// 体格データ履歴リスト
+		public IList<PhysicalDataSet> PhysicalDatas { get; set; }		// 体格データ履歴リスト
 		public IList<CapacityResultData> CapacityResults { get; set; }	// 体力・運動能力結果履歴リスト
 
 

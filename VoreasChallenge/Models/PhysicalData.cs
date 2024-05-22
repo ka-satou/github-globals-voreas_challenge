@@ -18,15 +18,10 @@ namespace VoreasChallenge.Models
 		[Key, Column(Order = 2), DataType(DataType.Date)]
 		public DateTime? MeasureDay { get; set; }			// 測定日
 
-		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
-		public float Height { get; set; }					// 身長
-		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
-		public float ShittingHeight { get; set; }			// 座高
-		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
-		public float LowerLimbLength { get; set; }			// 下肢長
-		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
-		public float Weight { get; set; }					// 体重
-		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
-		public float BodyFat { get; set; }					// 体脂肪
+		public float? Height { get; set; }					// 身長
+		public float? ShittingHeight { get; set; }			// 座高
+		public float? LowerLimbLength { get; set; }			// 下肢長
+		public float? Weight { get; set; }					// 体重
+		public float? BodyFat { get; set; }					// 体脂肪
 	}
 }
