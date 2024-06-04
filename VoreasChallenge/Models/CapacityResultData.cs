@@ -19,26 +19,34 @@ namespace VoreasChallenge.Models
 		[DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = false)]
 		public float? Run20mValue { get; set; }				// 20m走値
 		public string Run20mUnit { get; set; }				// 20m走単位
+		public string Run20mPoint { get; set; }				// 20m走ポイント
 
 		[DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = false)]
 		public float? ProAgilityValue { get; set; }			// プロアジティ値
-		public string ProAgilityUnit { get; set; }			// プロアジティ
+		public string ProAgilityUnit { get; set; }			// プロアジティ単位
+		public string ProAgilityPoint { get; set; }			// プロアジティポイント
+
 
 		[DisplayFormat(DataFormatString = "{0:0}", ApplyFormatInEditMode = false)]
 		public float? StandJumpValue { get; set; }			// 立幅跳び値
 		public string StandJumpUnit { get; set; }			// 立幅跳び単位
+		public string StandJumpPoint { get; set; }			// 立幅跳びポイント
 
 		[DisplayFormat(DataFormatString = "{0:0}", ApplyFormatInEditMode = false)]
 		public float? RepetJumpValue { get; set; }			// 反復横跳び値
 		public string RepetJumpUnit { get; set; }			// 反復横跳び単位
+		public string RepetJumpPoint { get; set; }			// 反復横跳びポイント
 
 		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
 		public float? VerticalJumpValue { get; set; }		// 垂直跳び値
 		public string VerticalJumpUnit { get; set; }		// 垂直跳び単位
+		public string VerticalJumpPoint { get; set; }		// 垂直跳びポイント
+
 
 		[DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = false)]
 		public float? ReboundJumpIndexValue { get; set; }	// リバウウンドジャンプ指数値
 		public string ReboundJumpIndexUnit { get; set; }	// リバウウンドジャンプ指数単位
+		public string ReboundJumpIndexPoint { get; set; }	// リバウウンドジャンプ指数ポイント
 
 		[DisplayFormat(DataFormatString = "{0:0.000}", ApplyFormatInEditMode = false)]
 		public float? GCTimeValue { get; set; }				// 接地時間値
