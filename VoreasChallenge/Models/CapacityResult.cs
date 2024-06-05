@@ -18,6 +18,7 @@ namespace VoreasChallenge.Models
 		[Key, Column(Order = 2), DataType(DataType.Date)]
 		public DateTime MeasureDay { get; set; }			// 測定日
 		public int Grade { get; set; }						// 学年
+		public int Sex { get; set; }						// 性別
 		public int SportsType { get; set; }					// スポーツタイプ
 
 		public float? Run20m { get; set; }					// 20m走

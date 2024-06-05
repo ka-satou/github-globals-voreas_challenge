@@ -35,12 +35,12 @@ namespace VoreasChallenge.Pages
 		public IList<MeasureHistory> MeasureHistorys { get; set; }		// 測定履歴データ
 		public IList<PhysicalDataSet> PhysicalDatas { get; set; }		// 体格データ履歴リスト
 		public IList<CapacityResultData> CapacityResults { get; set; }	// 体力・運動能力結果履歴リスト
-
+		public CapacityResultAvg CapacityResultAvg { get; set; }		// 体力・運動能力結果平均
 
 		// ページ読み出しのときにコールされる。
 		public void OnGet()
 		{
-			int? id = 0;		// ID入力値を取得
+			int? id = 1;		// ID入力値を取得
 
 			if (id == null)
 			{
@@ -75,6 +75,9 @@ namespace VoreasChallenge.Pages
 			}
 			MeasureHistorys = new List<MeasureHistory>(measureHistorys);
 			CapacityResults = new List<CapacityResultData>(capacityResults);
+
+			// 体力・運動能力結果平均取得
+			CapacityResultAvg = dataIfService.GetCapacityResultAvg(id);
 		}
 	}
 }
