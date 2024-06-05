@@ -6,13 +6,16 @@
 
 <div class="text-left">
 	<div class="field00">
-		<!-- IDデータ入力 -->
-		<label>
-			ID
-			<input type="text" id="idinput">
-		</label>
-		<!-- データ入力ボタン -->
-		<button type="button">データ入力</button>
+		<form method="post">
+			<!-- IDデータ入力 -->
+			<label>
+				ID
+				<input type="text" asp-for="InputID">
+			</label>
+			<!-- データ入力ボタン -->
+			<input type="submit" asp-page-handler="Update" value="更新">
+			<input type="submit" asp-page-handler="Input" value="データ入力">
+		</form>
 	</div>
 	<div class="field10">
 		<div class="field11">

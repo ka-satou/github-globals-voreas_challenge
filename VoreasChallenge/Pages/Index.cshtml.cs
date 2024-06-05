@@ -31,6 +31,10 @@ namespace VoreasChallenge.Pages
 			dataIfService = new DataIfService(context);
 		}
 
+
+		[BindProperty]
+		public int? InputID { get; set; } = 0;
+
 		public PersonalDataJoin PersonalData { get; set; }				// 個人データ
 		public IList<MeasureHistory> MeasureHistorys { get; set; }		// 測定履歴データ
 		public IList<PhysicalDataSet> PhysicalDatas { get; set; }		// 体格データ履歴リスト
@@ -38,9 +42,9 @@ namespace VoreasChallenge.Pages
 		public CapacityResultAvg CapacityResultAvg { get; set; }		// 体力・運動能力結果平均
 
 		// ページ読み出しのときにコールされる。
-		public void OnGet()
+		private void GetViewData(int? inputId = 0)
 		{
-			int? id = 1;		// ID入力値を取得
+			int? id = inputId;		// ID入力値を取得
 
 			if (id == null)
 			{
@@ -78,6 +82,32 @@ namespace VoreasChallenge.Pages
 
 			// 体力・運動能力結果平均取得
 			CapacityResultAvg = dataIfService.GetCapacityResultAvg(id);
+		}
+
+		// ページ初期表示
+		public IActionResult OnGet()
+		{
+			int? id = InputID;
+			GetViewData(id);
+			return Page();
+		}
+
+		// 更新・データ入力ボタン押下
+		public IActionResult OnPostUpdate()
+		{
+			int? id = InputID;
+			GetViewData(id);
+			return Page();
+		}
+
+		// 更新・データ入力ボタン押下
+		public IActionResult  OnPostInput()
+		{
+			// データ入力ポップアップ画面表示
+
+			int? id = InputID;
+			GetViewData(id);
+			return Page();
 		}
 	}
 }
