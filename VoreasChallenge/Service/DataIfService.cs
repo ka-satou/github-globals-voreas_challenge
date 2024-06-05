@@ -89,15 +89,15 @@ namespace VoreasChallenge.Service
 					physicalData.ID = phyitem.ID;
 					physicalData.MeasureDay = phyitem.MeasureDay;
 					physicalData.HeightValue = (phyitem.Height != null)? (float)Math.Round((float)phyitem.Height, 1, MidpointRounding.AwayFromZero) : null;
-					physicalData.HeightUnit = "cm";
+					physicalData.HeightUnit = (phyitem.Height != null)? "cm" : null;
 					physicalData.ShittingHeightValue = (phyitem.ShittingHeight != null)? (float)Math.Round((float)phyitem.ShittingHeight, 1, MidpointRounding.AwayFromZero) : null;
-					physicalData.ShittingHeightUnit = "cm";
+					physicalData.ShittingHeightUnit = (phyitem.ShittingHeight != null)? "cm" : null;
 					physicalData.LowerLimbLengthValue = (phyitem.LowerLimbLength != null)? (float)Math.Round((float)phyitem.LowerLimbLength, 1, MidpointRounding.AwayFromZero) : null;
-					physicalData.LowerLimbLengthUnit = "cm";
+					physicalData.LowerLimbLengthUnit = (phyitem.LowerLimbLength != null)? "cm" : null;
 					physicalData.WeightValue = (phyitem.Weight != null)? (float)Math.Round((float)phyitem.Weight, 1, MidpointRounding.AwayFromZero) : null;
-					physicalData.WeightUnit = "kg";
+					physicalData.WeightUnit = (phyitem.Weight != null)? "kg" : null;
 					physicalData.BodyFatValue= (phyitem.BodyFat != null)? (float)Math.Round((float)phyitem.BodyFat, 1, MidpointRounding.AwayFromZero) : null;
-					physicalData.BodyFatUnit = "%";
+					physicalData.BodyFatUnit = (phyitem.BodyFat != null)? "%" : null;
 					PhysicalDatas.Add(physicalData);
 				}
 
@@ -151,27 +151,27 @@ namespace VoreasChallenge.Service
 					capacityResultData.ID = caprtitem.caprt.ID;
 					capacityResultData.MeasureDay = caprtitem.caprt.MeasureDay;
 					capacityResultData.Run20mValue = (caprtitem.caprt.Run20m != null)? (float)Math.Round((float)caprtitem.caprt.Run20m, 2, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.Run20mUnit = "秒";
+					capacityResultData.Run20mUnit = (caprtitem.caprt.Run20m != null)? "秒" : null;
 					capacityResultData.Run20mPoint = (caprtitem.caprt.Run20mPoint != null)? GetStarPoint((float)caprtitem.caprt.Run20mPoint) : null;
 					capacityResultData.ProAgilityValue = (caprtitem.caprt.ProAgility != null)? (float)Math.Round((float)caprtitem.caprt.ProAgility, 2, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.ProAgilityUnit = "秒";
+					capacityResultData.ProAgilityUnit = (caprtitem.caprt.ProAgility != null)? "秒" : null;
 					capacityResultData.ProAgilityPoint = (caprtitem.caprt.ProAgilityPoint != null)? GetStarPoint((float)caprtitem.caprt.ProAgilityPoint) : null;
-					capacityResultData.StandJumpValue = (caprtitem.caprt.StandJump != null) ? (float)Math.Round((float)caprtitem.caprt.StandJump, 1, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.StandJumpUnit = "cm";
+					capacityResultData.StandJumpValue = (caprtitem.caprt.StandJump != null)? (float)Math.Round((float)caprtitem.caprt.StandJump, 1, MidpointRounding.AwayFromZero) : null;
+					capacityResultData.StandJumpUnit = (caprtitem.caprt.StandJump != null)? "cm" : null;
 					capacityResultData.StandJumpPoint = (caprtitem.caprt.StandJumpPoint != null)? GetStarPoint((float)caprtitem.caprt.StandJumpPoint) : null;
 					capacityResultData.RepetJumpValue = (caprtitem.caprt.RepetJump !=null)? (float)Math.Round((float)caprtitem.caprt.RepetJump, 0, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.RepetJumpUnit = "回";
+					capacityResultData.RepetJumpUnit = (caprtitem.caprt.RepetJump !=null)? "回" : null;
 					capacityResultData.RepetJumpPoint = (caprtitem.caprt.RepetJumpPoint != null)? GetStarPoint((float)caprtitem.caprt.RepetJumpPoint) : null;
 					capacityResultData.VerticalJumpValue = (caprtitem.caprt.VerticalJump != null)? (float)Math.Round((float)caprtitem.caprt.VerticalJump, 0, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.VerticalJumpUnit = "cm";
+					capacityResultData.VerticalJumpUnit = (caprtitem.caprt.VerticalJump != null)? "cm" : null;
 					capacityResultData.VerticalJumpPoint = (caprtitem.caprt.VerticalJumpPoint != null)? GetStarPoint((float)caprtitem.caprt.VerticalJumpPoint) : null;
 					capacityResultData.ReboundJumpIndexValue = (caprtitem.caprt.ReboundJumpIndex != null)? (float)Math.Round((float)caprtitem.caprt.ReboundJumpIndex, 1, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.ReboundJumpIndexUnit = "cm/s";
+					capacityResultData.ReboundJumpIndexUnit = (caprtitem.caprt.ReboundJumpIndex != null)? "cm/s" : null;
 					capacityResultData.ReboundJumpIndexPoint = (caprtitem.caprt.ReboundJumpIndexPoint != null)? GetStarPoint((float)caprtitem.caprt.ReboundJumpIndexPoint) : null;
 					capacityResultData.GCTimeValue = (caprtitem.caprt.GCTime != null)? (float)Math.Round((float)caprtitem.caprt.GCTime, 3, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.GCTimeUnit = "秒";
+					capacityResultData.GCTimeUnit = (caprtitem.caprt.GCTime != null)? "秒" : null;
 					capacityResultData.JumpHeightValue = (caprtitem.caprt.JumpHeight != null)? (float)Math.Round((float)caprtitem.caprt.JumpHeight, 1, MidpointRounding.AwayFromZero) : null;
-					capacityResultData.JumpHeightUnit = "cm";
+					capacityResultData.JumpHeightUnit = (caprtitem.caprt.JumpHeight != null)? "cm" : null;
 					CapacityResults.Add(capacityResultData);
 				}
 
@@ -199,45 +199,33 @@ namespace VoreasChallenge.Service
 		{
 			CapacityResultAvg resultAvg = new CapacityResultAvg();
 
-			resultAvg.Run20mAvg = (float)_context.CapacityResult
+			var capAvg = _context.CapacityResult.GroupBy(cap => new { cap.Grade, cap.Sex })
+			.Select(caprt => new
+				{
+					Grade = caprt.Key.Grade,
+					Sex =  caprt.Key.Sex,
+					Run20mAvg = caprt.Average(capav => capav.Run20m),
+					ProAgilityAvg = caprt.Average(capav => capav.ProAgility),
+					StandJumpAvg = caprt.Average(capav => capav.StandJump),
+					RepetJumpAvg = caprt.Average(capav => capav.RepetJump),
+					VerticalJumpAvg = caprt.Average(capav => capav.VerticalJump),
+					ReboundJumpIndexAvg = caprt.Average(capav => capav.ReboundJumpIndex),
+					GCTimeAvg = caprt.Average(capav => capav.GCTime),
+					JumpHeightAvg = caprt.Average(capav => capav.JumpHeight)
+				}
+			)
 			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
 			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.Run20m);
+			.FirstOrDefault();
 
-			resultAvg.ProAgilityAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.ProAgility);
-
-			resultAvg.StandJumpAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.StandJump);
-
-			resultAvg.RepetJumpAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.RepetJump);
-
-			resultAvg.VerticalJumpAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.VerticalJump);
-
-			resultAvg.ReboundJumpIndexAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.ReboundJumpIndex);
-
-			resultAvg.GCTimeAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.GCTime);
-
-			resultAvg.JumpHeightAvg = (float)_context.CapacityResult
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
-			.Average(caprt => caprt.JumpHeight);
+			resultAvg.Run20mAvg = (float)capAvg.Run20mAvg;
+			resultAvg.ProAgilityAvg = (float)capAvg.ProAgilityAvg;
+			resultAvg.StandJumpAvg = (float)capAvg.StandJumpAvg;
+			resultAvg.RepetJumpAvg = (float)capAvg.RepetJumpAvg;
+			resultAvg.VerticalJumpAvg = (float)capAvg.VerticalJumpAvg;
+			resultAvg.ReboundJumpIndexAvg = (float)capAvg.ReboundJumpIndexAvg;
+			resultAvg.GCTimeAvg = (float)capAvg.GCTimeAvg;
+			resultAvg.JumpHeightAvg = (float)capAvg.JumpHeightAvg;
 
 			return resultAvg;
 		}
