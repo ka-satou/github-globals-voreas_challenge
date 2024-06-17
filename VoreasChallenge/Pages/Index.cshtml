@@ -10,11 +10,11 @@
 			<!-- IDデータ入力 -->
 			<label>
 				ID
-				<input type="text" asp-for="InputID">
+				<input type="number" asp-for="InputID">
 			</label>
 			<!-- データ入力ボタン -->
-			<input type="submit" asp-page-handler="Update" value="更新">
-			<input type="submit" asp-page-handler="Input" value="データ入力">
+			<input type="submit" class="btn btn-primary" asp-page-handler="Update" value="更新">
+			<button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-url="@Url.Page("Index", "InputDataModal")">データ入力</button>
 		</form>
 	</div>
 	<div class="field10">
@@ -552,3 +552,5 @@
 		</div>
 	</div>
 </div>
+<!-- Modal placeholder -->
+<div id="modal-placeholder"></div>

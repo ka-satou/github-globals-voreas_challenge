@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,12 +13,20 @@ using VoreasChallenge.Service;
 
 namespace VoreasChallenge.Pages
 {
+	/// <summary>
+	/// Indexビハンドコードクラス
+	/// </summary>
 	public class IndexModel : PageModel
 	{
 //		private readonly ILogger<IndexModel> _logger;
 
 //		private readonly VoreasChallengeContext _context;		// データインタフェース
 
+		private static int? IdSave{ get; set; }
+
+		/// <summary>
+		/// データインターフェースサービスクラス
+		/// </summary>
 		private DataIfService dataIfService { get; set; }
 
 //		public IndexModel(ILogger<IndexModel> logger)
@@ -25,23 +34,34 @@ namespace VoreasChallenge.Pages
 //			_logger = logger;
 //		}
 
-		// コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="context"></param>
 		public IndexModel(VoreasChallengeContext context)
 		{
 			dataIfService = new DataIfService(context);
 		}
 
-
+		/// <summary>
+		/// データ入力パラメータ
+		/// </summary>
 		[BindProperty]
-		public int? InputID { get; set; } = 0;
+		public int? InputID { get; set; }
 
+		/// <summary>
+		/// 画面表示プロパティ
+		/// </summary>
 		public PersonalDataJoin PersonalData { get; set; }				// 個人データ
 		public IList<MeasureHistory> MeasureHistorys { get; set; }		// 測定履歴データ
 		public IList<PhysicalDataSet> PhysicalDatas { get; set; }		// 体格データ履歴リスト
 		public IList<CapacityResultData> CapacityResults { get; set; }	// 体力・運動能力結果履歴リスト
 		public CapacityResultAvg CapacityResultAvg { get; set; }		// 体力・運動能力結果平均
 
-		// ページ読み出しのときにコールされる。
+		/// <summary>
+		/// 画面表示データ取得
+		/// </summary>
+		/// <param name="inputId"></param>
 		private void GetViewData(int? inputId = 0)
 		{
 			int? id = inputId;		// ID入力値を取得
@@ -84,30 +104,61 @@ namespace VoreasChallenge.Pages
 			CapacityResultAvg = dataIfService.GetCapacityResultAvg(id);
 		}
 
-		// ページ初期表示
+		/// <summary>
+		/// ページ初回表示
+		/// </summary>
+		/// <returns></returns>
 		public IActionResult OnGet()
 		{
-			int? id = InputID;
+			
+			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
 			GetViewData(id);
 			return Page();
 		}
 
-		// 更新・データ入力ボタン押下
+		/// <summary>
+		/// 更新ボタン押下/再表示処理
+		/// </summary>
+		/// <returns></returns>
 		public IActionResult OnPostUpdate()
 		{
-			int? id = InputID;
+			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
 			GetViewData(id);
 			return Page();
 		}
 
-		// 更新・データ入力ボタン押下
-		public IActionResult  OnPostInput()
+		/// <summary>
+		/// データ入力モーダル画面表示
+		/// </summary>
+		/// <returns></returns>
+		public PartialViewResult OnGetInputDataModal()
 		{
-			// データ入力ポップアップ画面表示
+			return new PartialViewResult
+			{
+				ViewName = "_InputDataModal",
+				ViewData = new ViewDataDictionary<InputData>(ViewData, new InputData { })
+			};
+		}
 
-			int? id = InputID;
-			GetViewData(id);
-			return Page();
+
+		/// <summary>
+		/// データ入力モーダル画面保存押下/データ挿入・更新処理 or 入力エラー表示処理
+		/// </summary>
+		/// <param name="model"></param>
+		public PartialViewResult OnPostInputDataModal(InputData model)
+		{
+			if (ModelState.IsValid)	// データ有効の場合のみ保存
+			{
+				IdSave = model.Id;
+				//	Contacts.Add(model);
+
+			}
+
+			return new PartialViewResult
+			{
+				ViewName = "_InputDataModal",
+				ViewData = new ViewDataDictionary<InputData>(ViewData, model)
+			};
 		}
 	}
 }
