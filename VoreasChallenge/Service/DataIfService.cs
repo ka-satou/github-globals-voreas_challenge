@@ -15,14 +15,20 @@ namespace VoreasChallenge.Service
 
 		private VoreasChallengeContext _context { get; set; }		// データインタフェース
 
-
-		// コンストラクタ
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="context"></param>
 		public DataIfService(VoreasChallengeContext context)
 		{
 			_context = context;		// データコンテキスト設定
 		}
 
-		// 個人データ取得
+		/// <summary>
+		/// 個人データ取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public PersonalDataJoin GetPersonalData(int? id)
 		{
 			PersonalDataJoin PersonalData = null;
@@ -69,7 +75,11 @@ namespace VoreasChallenge.Service
 			return PersonalData;
 		}
 
-		// 体格データ履歴リスト取得
+		/// <summary>
+		/// 体格データ履歴リスト取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public List<PhysicalDataSet> GetPhysicalData(int? id)
 		{
 			List<PhysicalDataSet> PhysicalDatas = null;
@@ -115,7 +125,12 @@ namespace VoreasChallenge.Service
 			return PhysicalDatas;
 		}
 
-		// 体力・運動能力結果履歴リスト取得
+		/// <summary>
+		/// 体力・運動能力結果履歴リスト取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="MeasureHistorys"></param>
+		/// <param name="CapacityResults"></param>
 		public void GetCapacityResults(int? id,out List<MeasureHistory> MeasureHistorys, out List<CapacityResultData> CapacityResults)
 		{
 			var caprslt = _context.CapacityResult
@@ -194,7 +209,11 @@ namespace VoreasChallenge.Service
 			}
 		}
 
-		// 体力・運動能力結果平均値取得
+		/// <summary>
+		/// 体力・運動能力結果平均値取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public CapacityResultAvg GetCapacityResultAvg(int? id)
 		{
 			CapacityResultAvg resultAvg = new CapacityResultAvg();
@@ -230,7 +249,11 @@ namespace VoreasChallenge.Service
 			return resultAvg;
 		}
 
-		// ★マークポイント取得(5段階評価)
+		/// <summary>
+		/// ★マークポイント取得(5段階評価)
+		/// </summary>
+		/// <param name="pointData"></param>
+		/// <returns></returns>
 		private string GetStarPoint(float pointData)
 		{
 			string starPnt = null;
@@ -252,5 +275,24 @@ namespace VoreasChallenge.Service
 
 			return starPnt;
 		}
+
+		/// <summary>
+		/// スポーツタイプリスト取得
+		/// </summary>
+		/// <returns></returns>
+		public List<SportsTypeMaster> GetSportsTypeList() => _context.SportsTypeMaster.OrderBy(data => data.Id).ToList<SportsTypeMaster>();
+
+		/// <summary>
+		/// 学年リスト取得
+		/// </summary>
+		/// <returns></returns>
+		public List<GradeMaster> GetGradeList() => _context.GradeMaster.OrderBy(data => data.Id).ToList<GradeMaster>();
+
+		/// <summary>
+		/// 性別リスト取得
+		/// </summary>
+		/// <returns></returns>
+		public List<SexMaster> GetSexList() => _context.SexMaster.OrderBy(data => data.Id).ToList<SexMaster>();
+
 	}
 }

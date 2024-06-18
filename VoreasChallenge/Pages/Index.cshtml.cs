@@ -133,13 +133,13 @@ namespace VoreasChallenge.Pages
 		/// <returns></returns>
 		public PartialViewResult OnGetInputDataModal()
 		{
+			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
 			return new PartialViewResult
 			{
 				ViewName = "_InputDataModal",
-				ViewData = new ViewDataDictionary<InputData>(ViewData, new InputData { })
+				ViewData = new ViewDataDictionary<InputData>(ViewData, new InputData(dataIfService, id))
 			};
 		}
-
 
 		/// <summary>
 		/// データ入力モーダル画面保存押下/データ挿入・更新処理 or 入力エラー表示処理

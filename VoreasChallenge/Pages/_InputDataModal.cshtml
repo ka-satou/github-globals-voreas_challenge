@@ -23,10 +23,11 @@
 						<label asp-for="Id" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="Id" class="col-sm-7 form-control-sm"/>
+								<input asp-for="Id" class="col-sm-7 form-control-sm" />
 								<span asp-validation-for="Id" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
+						<button type="button" class="btn btn-primary">検索</button>
 					</div>
 
 					<!--個人情報-->
@@ -43,7 +44,9 @@
 						<label asp-for="SportsType" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="SportsType" class="col-sm-7 form-control-sm"/>
+								<select asp-for="SportsType" asp-items="@Model.SportsTypeSelect" class="col-sm-7 form-control-sm">
+									<option value="">-- 種目選択 --</option>
+								</select>
 								<span asp-validation-for="SportsType" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
@@ -61,7 +64,9 @@
 						<label asp-for="Grade" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="Grade" class="col-sm-7 form-control-sm"/>
+								<select asp-for="Grade" asp-items="@Model.GradeSelect" class="col-sm-7 form-control-sm">
+									<option value="">-- 学年選択 --</option>
+								</select>
 								<span asp-validation-for="Grade" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
@@ -70,7 +75,9 @@
 						<label asp-for="Sex" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="Sex" class="col-sm-7 form-control-sm"/>
+								<select asp-for="Sex" asp-items="@Model.SexSelect" class="col-sm-7 form-control-sm">
+									<option value="">-- 性別選択 --</option>
+								</select>
 								<span asp-validation-for="Sex" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
