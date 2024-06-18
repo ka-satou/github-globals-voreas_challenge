@@ -86,115 +86,125 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<!--体格情報-->
-							<div class="row mb-3">
-								<label asp-for="Height" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="Height" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="Height" class="col-sm-9 text-danger"></span>
+							<div class="row mb-sm-1 input_fild00">
+								<label class="col-sm-3 col-form-label col-form-label-sm"><b>体格情報</b></label>
+							</div>
+							<div class="col input_fild10">
+								<!--体格情報-->
+								<div class="row mb-3 input_fild20">
+									<label asp-for="Height" class="col-sm-3 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="Height" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="Height" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="ShittingHeight" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="ShittingHeight" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="ShittingHeight" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="ShittingHeight" class="col-sm-3 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="ShittingHeight" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="ShittingHeight" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="LowerLimbLength" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="LowerLimbLength" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="LowerLimbLength" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="LowerLimbLength" class="col-sm-3 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="LowerLimbLength" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="LowerLimbLength" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="Weight" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="Weight" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="Weight" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="Weight" class="col-sm-3 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="Weight" class="col-sm-8 form-control-sm" /><p>&ensp;kg</p>
+											<span asp-validation-for="Weight" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="BodyFat" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="BodyFat" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="BodyFat" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="BodyFat" class="col-sm-3 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="BodyFat" class="col-sm-8 form-control-sm" /><p>&ensp;%</p>
+											<span asp-validation-for="BodyFat" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col">
-							<!--計測情報-->
-							<div class="row mb-3">
-								<label asp-for="Run20m" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="Run20m" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="Run20m" class="col-sm-9 text-danger"></span>
+							<div class="row mb-sm-1 input_fild00">
+								<label class="col-sm-3 col-form-label col-form-label-sm"><b>計測情報</b></label>
+							</div>
+							<div class="col input_fild11">
+								<!--計測情報-->
+								<div class="row mb-3 input_fild20">
+									<label asp-for="Run20m" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="Run20m" class="col-sm-8 form-control-sm" /><p>&ensp;秒</p>
+											<span asp-validation-for="Run20m" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="ProAgility" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="ProAgility" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="ProAgility" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="ProAgility" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="ProAgility" class="col-sm-8 form-control-sm" /><p>&ensp;秒</p>
+											<span asp-validation-for="ProAgility" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="StandJump" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="StandJump" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="StandJump" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="StandJump" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="StandJump" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="StandJump" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="RepetJump" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="RepetJump" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="RepetJump" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="RepetJump" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="RepetJump" class="col-sm-8 form-control-sm" /><p>&ensp;回</p>
+											<span asp-validation-for="RepetJump" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="VerticalJump" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="VerticalJump" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="VerticalJump" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="VerticalJump" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="VerticalJump" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="VerticalJump" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="GCTime" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="GCTime" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="GCTime" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="GCTime" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="GCTime" class="col-sm-8 form-control-sm" /><p>&ensp;秒</p>
+											<span asp-validation-for="GCTime" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row mb-3">
-								<label asp-for="JumpHeight" class="col-sm-3 col-form-label col-form-label-sm"></label>
-								<div class="col-sm-9">
-									<div class="row">
-										<input asp-for="JumpHeight" class="col-sm-9 form-control-sm" />
-										<span asp-validation-for="JumpHeight" class="col-sm-9 text-danger"></span>
+								<div class="row mb-3">
+									<label asp-for="JumpHeight" class="col-sm-4 col-form-label col-form-label-sm"></label>
+									<div class="col-sm-8">
+										<div class="row">
+											<input asp-for="JumpHeight" class="col-sm-8 form-control-sm" /><p>&ensp;cm</p>
+											<span asp-validation-for="JumpHeight" class="col-sm-8 text-danger"></span>
+										</div>
 									</div>
 								</div>
 							</div>
