@@ -19,7 +19,6 @@ $(function () {
 
 		event.preventDefault();		// デフォルト処理実施
 
-
 		var form = $(this).parents('.modal').find('form');
 		var actionUrl = form.attr('action');
 		var dataToSend = form.serialize();
