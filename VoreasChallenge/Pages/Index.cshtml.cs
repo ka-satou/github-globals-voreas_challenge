@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -22,7 +23,8 @@ namespace VoreasChallenge.Pages
 
 //		private readonly VoreasChallengeContext _context;		// データインタフェース
 
-		private static int? IdSave{ get; set; }
+		private static int? IdSave{ get; set; }					// 保存Id
+		private static DateTime BirthDayDefault = new DateTime(2010,1,1);	// 誕生日デフォルト
 
 		/// <summary>
 		/// データインターフェースサービスクラス
@@ -134,10 +136,36 @@ namespace VoreasChallenge.Pages
 		public PartialViewResult OnGetInputDataModal()
 		{
 			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
+
+//			SportsTypeMaster SportsType = new SportsTypeMaster();
+
 			return new PartialViewResult
 			{
 				ViewName = "_InputDataModal",
-				ViewData = new ViewDataDictionary<InputData>(ViewData, new InputData(dataIfService, id))
+				ViewData = new ViewDataDictionary<InputData>
+					(
+						ViewData, 
+						new InputData
+						{
+							SportsTypeSelect = new SelectList(
+											dataIfService.GetSportsTypeList(),
+											nameof(SportsTypeMaster.Id),
+											nameof(SportsTypeMaster.SportsTypeName)
+										),	
+							GradeSelect = new SelectList(
+									dataIfService.GetGradeList(),
+									nameof(GradeMaster.Id),
+									nameof(GradeMaster.GradeName)
+								),
+							SexSelect = new SelectList(
+									dataIfService.GetSexList(),
+									nameof(SexMaster.Id),
+									nameof(SexMaster.SexName)
+								),
+							MeasureDay = DateTime.Now,
+							BirthDay = BirthDayDefault
+						}
+					)
 			};
 		}
 
@@ -153,6 +181,24 @@ namespace VoreasChallenge.Pages
 				//	Contacts.Add(model);
 
 			}
+
+			model.SportsTypeSelect = new SelectList(
+											dataIfService.GetSportsTypeList(),
+											nameof(SportsTypeMaster.Id),
+											nameof(SportsTypeMaster.SportsTypeName)
+										);
+
+			model.GradeSelect = new SelectList(
+									dataIfService.GetGradeList(),
+									nameof(GradeMaster.Id),
+									nameof(GradeMaster.GradeName)
+								);
+
+			model.SexSelect = new SelectList(
+									dataIfService.GetSexList(),
+									nameof(SexMaster.Id),
+									nameof(SexMaster.SexName)
+								);
 
 			return new PartialViewResult
 			{

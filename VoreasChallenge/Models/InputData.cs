@@ -13,37 +13,6 @@ namespace VoreasChallenge.Models
 	/// </summary>
 	public class InputData
 	{
-
-		/// <summary>
-		/// コンストラクタ
-		/// </summary>
-		/// <param name="id"></param>
-		public InputData( DataIfService dataIf, int? id)
-		{
-			SportsTypeSelect = new SelectList(
-										dataIf.GetSportsTypeList(),
-										nameof(SportsTypeMaster.Id),
-										nameof(SportsTypeMaster.SportsTypeName),
-										SportsTypeSelect
-									);
-
-			GradeSelect = new SelectList(
-									dataIf.GetGradeList(),
-									nameof(GradeMaster.Id),
-									nameof(GradeMaster.GradeName),
-									Grade
-								);
-
-			SexSelect = new SelectList(
-									dataIf.GetSexList(),
-									nameof(SexMaster.Id),
-									nameof(SexMaster.SexName),
-									Sex
-								);
-
-
-		}
-
 		// ID
 		[Required]
 		[Display(Name = "個人ID")]
@@ -59,11 +28,8 @@ namespace VoreasChallenge.Models
 		// スポーツタイプ
 		[Required]
 		[Display(Name = "種目")]
-		public SportsTypeMaster SportsType { get; set; }
+		public int SportsType { get; set; }
 		public SelectList SportsTypeSelect { get; set; }
-
-
-//		public int SportsType { get; set; }
 
 		// 測定日
 		[Required]
@@ -74,16 +40,14 @@ namespace VoreasChallenge.Models
 		// 学年
 		[Required]
 		[Display(Name = "学年")]
-		public GradeMaster Grade { get; set; }
+		public int Grade { get; set; }
 		public SelectList GradeSelect { get; set; }
-//		public int Grade { get; set; }
 
 		// 性別
 		[Required]
 		[Display(Name = "性別")]
-		public SexMaster Sex { get; set; }
+		public int Sex { get; set; }
 		public SelectList SexSelect { get; set; }
-//		public int Sex { get; set; }
 
 		// 生年月日
 		[Required]
