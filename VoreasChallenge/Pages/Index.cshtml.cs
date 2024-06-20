@@ -104,6 +104,8 @@ namespace VoreasChallenge.Pages
 
 			// 体力・運動能力結果平均取得
 			CapacityResultAvg = dataIfService.GetCapacityResultAvg(id);
+
+			IdSave = id;		// IDを保存
 		}
 
 		/// <summary>
@@ -136,37 +138,80 @@ namespace VoreasChallenge.Pages
 		public PartialViewResult OnGetInputDataModal()
 		{
 			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
+			PartialViewResult viewResult = null;
 
-//			SportsTypeMaster SportsType = new SportsTypeMaster();
+			PersonalData personal = dataIfService.GetPersonalData((int)id);
 
-			return new PartialViewResult
+			if(personal == null)		// 新規の場合
 			{
-				ViewName = "_InputDataModal",
-				ViewData = new ViewDataDictionary<InputData>
-					(
-						ViewData, 
-						new InputData
-						{
-							SportsTypeSelect = new SelectList(
-											dataIfService.GetSportsTypeList(),
-											nameof(SportsTypeMaster.Id),
-											nameof(SportsTypeMaster.SportsTypeName)
-										),	
-							GradeSelect = new SelectList(
-									dataIfService.GetGradeList(),
-									nameof(GradeMaster.Id),
-									nameof(GradeMaster.GradeName)
-								),
-							SexSelect = new SelectList(
-									dataIfService.GetSexList(),
-									nameof(SexMaster.Id),
-									nameof(SexMaster.SexName)
-								),
-							MeasureDay = DateTime.Now,
-							BirthDay = BirthDayDefault
-						}
-					)
-			};
+				viewResult = new PartialViewResult
+				{
+					ViewName = "_InputDataModal",
+					ViewData = new ViewDataDictionary<InputData>
+						(
+							ViewData, 
+							new InputData
+							{
+								Id = null,
+								SportsTypeSelect = new SelectList(
+												dataIfService.GetSportsTypeList(),
+												nameof(SportsTypeMaster.Id),
+												nameof(SportsTypeMaster.SportsTypeName)
+											),	
+								GradeSelect = new SelectList(
+										dataIfService.GetGradeList(),
+										nameof(GradeMaster.Id),
+										nameof(GradeMaster.GradeName)
+									),
+								SexSelect = new SelectList(
+										dataIfService.GetSexList(),
+										nameof(SexMaster.Id),
+										nameof(SexMaster.SexName)
+									),
+								MeasureDay = DateTime.Now,
+								BirthDay = BirthDayDefault
+							}
+						)
+				};
+			}
+			else	// 登録済みの場合
+			{
+				viewResult = new PartialViewResult
+				{
+					ViewName = "_InputDataModal",
+					ViewData = new ViewDataDictionary<InputData>
+						(
+							ViewData, 
+							new InputData
+							{
+								Id = personal.ID,
+								Name = personal.Name,
+								SportsType = personal.SportsType,
+								SportsTypeSelect = new SelectList(
+												dataIfService.GetSportsTypeList(),
+												nameof(SportsTypeMaster.Id),
+												nameof(SportsTypeMaster.SportsTypeName)
+											),	
+								Grade = personal.Grade,
+								GradeSelect = new SelectList(
+										dataIfService.GetGradeList(),
+										nameof(GradeMaster.Id),
+										nameof(GradeMaster.GradeName)
+									),
+								Sex = personal.Sex,
+								SexSelect = new SelectList(
+										dataIfService.GetSexList(),
+										nameof(SexMaster.Id),
+										nameof(SexMaster.SexName)
+									),
+								MeasureDay = DateTime.Now,
+								BirthDay = personal.BirthDay
+							}
+						)
+				};
+			}
+
+			return viewResult;
 		}
 
 		/// <summary>

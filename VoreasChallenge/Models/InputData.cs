@@ -16,7 +16,7 @@ namespace VoreasChallenge.Models
 		// ID
 		[Required]
 		[Display(Name = "個人ID")]
-		public int Id { get; set; }
+		public int? Id { get; set; }
 
 		//--- 個人情報 ----//
 

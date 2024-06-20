@@ -294,5 +294,13 @@ namespace VoreasChallenge.Service
 		/// <returns></returns>
 		public List<SexMaster> GetSexList() => _context.SexMaster.OrderBy(data => data.Id).ToList<SexMaster>();
 
+
+		/// <summary>
+		/// 個別データ取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		public PersonalData GetPersonalData(int id) => _context.PersonalData.Where(pdata => pdata.ID == id).FirstOrDefault();
+
 	}
 }
