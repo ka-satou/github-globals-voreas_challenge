@@ -13,8 +13,11 @@ namespace VoreasChallenge.Models
 	/// </summary>
 	public class InputData
 	{
+		// 入力タイプ("add/new")
+		public string InputType { get; set; }
+
 		// ID
-		[Required]
+//		[Required]
 		[Display(Name = "個人ID")]
 		public int? Id { get; set; }
 

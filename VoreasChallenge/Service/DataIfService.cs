@@ -260,7 +260,7 @@ namespace VoreasChallenge.Service
 		private string GetStarPoint(float pointData)
 		{
 			string starPnt = null;
-			if((pointData >= 0.0) && (pointData < 1.0)){
+			if(pointData < 1.0){
 				starPnt = "★";
 			}
 			else if((pointData >= 1.0) && (pointData < 2.0)){
@@ -326,9 +326,9 @@ namespace VoreasChallenge.Service
 		/// </summary>
 		/// <param name="inputData"></param>
 		/// <returns></returns>
-		public bool SvaveInputData(InputData inputData)
+		public int SvaveInputData(InputData inputData)
 		{
-			bool bResult = false;
+			int saveId = -1;
 
 			using (var transaction = _context.Database.BeginTransaction())
 			{
@@ -339,13 +339,8 @@ namespace VoreasChallenge.Service
 					{	// 新規登録
 
 						// 新規ID取得
-						var idMaxData = _context.PersonalData.GroupBy(p => new { p.ID })
-						.Select(p => new
-							{
-								idMax = p.Max(p => p.ID)
-							}
-						).FirstOrDefault();
-						id = idMaxData.idMax + 1;
+						var idMax = _context.PersonalData.Max(pdata => pdata.ID);
+						id = idMax + 1;
 
 						// 個人データ挿入
 						PersonalData personal = new PersonalData
@@ -432,7 +427,7 @@ namespace VoreasChallenge.Service
 					_context.SaveChanges();
 
 					transaction.Commit();
-					bResult = true;
+					saveId = id;
 				}
 				catch (Exception ex)
 				{
@@ -440,7 +435,7 @@ namespace VoreasChallenge.Service
 					transaction.Rollback();
 				}
 			}
-			return bResult;
+			return saveId;
 		}
 
 		/// <summary>

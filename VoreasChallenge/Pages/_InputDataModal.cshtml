@@ -18,24 +18,27 @@
 			<div class="modal-body">
 				<form asp-page-handler="InputDataModal">
 					<input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+					<input asp-for="InputType" type="hidden" />
 
-					<div class="row mb-3">
-						<label asp-for="Id" class="col-sm-2 col-form-label col-form-label-sm"></label>
-						<div class="col-sm-7">
-							<div class="row">
-								<input asp-for="Id" class="col-sm-7 form-control-sm" />
-								<span asp-validation-for="Id" class="col-sm-7 text-danger"></span>
+					@if(@Model.InputType == "add"){
+						<div class="row mb-3">
+							<label asp-for="Id" class="col-sm-2 col-form-label col-form-label-sm"></label>
+							<div class="col-sm-7">
+								<div class="row">
+									<input asp-for="Id" class="col-sm-7 form-control-sm" disabled/>
+									<span asp-validation-for="Id" class="col-sm-7 text-danger"></span>
+								</div>
 							</div>
+							<button type="button" class="btn btn-primary">検索</button>
 						</div>
-						<button type="button" class="btn btn-primary">検索</button>
-					</div>
+					}
 
 					<!--個人情報-->
 					<div class="row mb-3">
 						<label asp-for="Name" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="Name" class="col-sm-7 form-control-sm"/>
+								<input asp-for="Name" class="col-sm-7 form-control-sm" />
 								<span asp-validation-for="Name" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
@@ -55,7 +58,7 @@
 						<label asp-for="MeasureDay" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="MeasureDay" class="col-sm-7 form-control-sm"/>
+								<input asp-for="MeasureDay" class="col-sm-7 form-control-sm" />
 								<span asp-validation-for="MeasureDay" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
@@ -86,7 +89,7 @@
 						<label asp-for="BirthDay" class="col-sm-2 col-form-label col-form-label-sm"></label>
 						<div class="col-sm-7">
 							<div class="row">
-								<input asp-for="BirthDay" class="col-sm-7 form-control-sm"/>
+								<input asp-for="BirthDay" class="col-sm-7 form-control-sm" />
 								<span asp-validation-for="BirthDay" class="col-sm-7 text-danger"></span>
 							</div>
 						</div>
