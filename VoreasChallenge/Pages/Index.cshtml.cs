@@ -137,10 +137,27 @@ namespace VoreasChallenge.Pages
 		/// <returns></returns>
 		public PartialViewResult OnGetInputDataModal()
 		{
-			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = 0;
+			int? id = (InputID != null)? InputID : (IdSave != null)? InputID = IdSave : InputID = null;
 			PartialViewResult viewResult = null;
 
-			PersonalData personal = dataIfService.GetPersonalData((int)id);
+			PersonalData personal = null;
+			PhysicalData physical = null;
+			CapacityResult capacity = null;
+
+			if (id != null)
+			{
+				personal = dataIfService.GetPersonalData((int)id);
+				physical = dataIfService.GetPhysicalData((int)id, DateTime.Now.Date);
+				if (physical == null)
+				{
+					physical = new PhysicalData();
+				}
+				capacity = dataIfService.GetCapacityResults((int)id, DateTime.Now.Date);
+				if(capacity == null)
+				{
+					capacity = new CapacityResult();
+				}
+			}
 
 			if(personal == null)		// 新規の場合
 			{
@@ -205,7 +222,19 @@ namespace VoreasChallenge.Pages
 										nameof(SexMaster.SexName)
 									),
 								MeasureDay = DateTime.Now,
-								BirthDay = personal.BirthDay
+								BirthDay = personal.BirthDay,
+								Height = physical.Height,
+								ShittingHeight = physical.ShittingHeight,
+								LowerLimbLength = physical.LowerLimbLength,
+								Weight = physical.Weight,
+								BodyFat = physical.BodyFat,
+								Run20m = capacity.Run20m,
+								ProAgility = capacity.ProAgility,
+								StandJump = capacity.StandJump,
+								RepetJump = capacity.RepetJump,
+								VerticalJump = capacity.VerticalJump,
+								GCTime = capacity.GCTime,
+								JumpHeight = capacity.JumpHeight
 							}
 						)
 				};
@@ -223,8 +252,7 @@ namespace VoreasChallenge.Pages
 			if (ModelState.IsValid)	// データ有効の場合のみ保存
 			{
 				IdSave = model.Id;
-				//	Contacts.Add(model);
-
+				dataIfService.SvaveInputData(model);
 			}
 
 			model.SportsTypeSelect = new SelectList(

@@ -16,7 +16,7 @@ namespace VoreasChallenge.Models
 		public int ID { get; set; }							// データID
 
 		[Key, Column(Order = 2), DataType(DataType.Date)]
-		public DateTime? MeasureDay { get; set; }			// 測定日
+		public DateTime MeasureDay { get; set; }			// 測定日
 
 		public float? Height { get; set; }					// 身長
 		public float? ShittingHeight { get; set; }			// 座高

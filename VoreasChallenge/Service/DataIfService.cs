@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using VoreasChallenge.Data;
@@ -218,7 +219,9 @@ namespace VoreasChallenge.Service
 		{
 			CapacityResultAvg resultAvg = new CapacityResultAvg();
 
-			var capAvg = _context.CapacityResult.GroupBy(cap => new { cap.Grade, cap.Sex })
+			var capAvg = _context.CapacityResult
+			.Where(caprt => (caprt.Run20m != null && caprt.ProAgility != null && caprt.StandJump != null && caprt.RepetJump != null && caprt.VerticalJump != null && caprt.ReboundJumpIndex != null))	
+			.GroupBy(cap => new { cap.Grade, cap.Sex })
 			.Select(caprt => new
 				{
 					Grade = caprt.Key.Grade,
@@ -233,8 +236,8 @@ namespace VoreasChallenge.Service
 					JumpHeightAvg = caprt.Average(capav => capav.JumpHeight)
 				}
 			)
-			.Where(caprt => caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
-			.Where(caprt => caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
+			.Where(caprt => (caprt.Grade == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Grade).First())
+			 && caprt.Sex == _context.CapacityResult.OrderByDescending(caprt => caprt.MeasureDay).Where(caprt => caprt.ID == id).Select(caprt => caprt.Sex).First())
 			.FirstOrDefault();
 
 			resultAvg.Run20mAvg = (float)capAvg.Run20mAvg;
@@ -302,5 +305,197 @@ namespace VoreasChallenge.Service
 		/// <returns></returns>
 		public PersonalData GetPersonalData(int id) => _context.PersonalData.Where(pdata => pdata.ID == id).FirstOrDefault();
 
+		/// <summary>
+		/// 体格データ取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="date"></param>
+		/// <returns></returns>
+		public PhysicalData GetPhysicalData(int id, DateTime date) => _context.PhysicalData.Where(physdata => (physdata.ID == id && physdata.MeasureDay == date)).FirstOrDefault();
+
+		/// <summary>
+		///  体力・運動能力データ取得
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="date"></param>
+		/// <returns></returns>
+		public CapacityResult GetCapacityResults(int id, DateTime date) => _context.CapacityResult.Where(caprt => (caprt.ID == id && caprt.MeasureDay == date)).FirstOrDefault();
+
+		/// <summary>
+		/// 入力データ保存
+		/// </summary>
+		/// <param name="inputData"></param>
+		/// <returns></returns>
+		public bool SvaveInputData(InputData inputData)
+		{
+			bool bResult = false;
+
+			using (var transaction = _context.Database.BeginTransaction())
+			{
+				try
+				{
+					int id = 0;
+					if(inputData.Id == null)
+					{	// 新規登録
+
+						// 新規ID取得
+						var idMaxData = _context.PersonalData.GroupBy(p => new { p.ID })
+						.Select(p => new
+							{
+								idMax = p.Max(p => p.ID)
+							}
+						).FirstOrDefault();
+						id = idMaxData.idMax + 1;
+
+						// 個人データ挿入
+						PersonalData personal = new PersonalData
+						{
+							ID = id,
+							SportsType = inputData.SportsType,
+							Name = inputData.Name,
+							Grade = inputData.Grade,
+							Sex = inputData.Sex,
+							BirthDay = inputData.BirthDay
+						};
+						_context.PersonalData.Add(personal);
+						_context.SaveChanges();
+					}
+					else
+					{	// 登録済み更新
+
+						// 個人データ更新
+						id = (int)inputData.Id;
+						PersonalData personal = new PersonalData
+						{
+							ID = id,
+							SportsType = inputData.SportsType,
+							Name = inputData.Name,
+							Grade = inputData.Grade,
+							Sex = inputData.Sex,
+							BirthDay = inputData.BirthDay
+						};
+						_context.PersonalData.Update(personal);
+						_context.SaveChanges();
+					}
+
+					// 体格データ挿入
+					bool phyContains =_context.PhysicalData.Any(phy => (phy.ID == id && phy.MeasureDay == inputData.MeasureDay));
+					PhysicalData physical = new PhysicalData
+					{
+						ID = id,
+						MeasureDay = (DateTime)inputData.MeasureDay,
+						Height = inputData.Height,
+						ShittingHeight = inputData.ShittingHeight,
+						LowerLimbLength = inputData.LowerLimbLength,
+						Weight = inputData.Weight,
+						BodyFat = inputData.BodyFat
+					};
+					if (!phyContains)
+					{
+						_context.PhysicalData.Add(physical);
+					}
+					else
+					{
+						_context.PhysicalData.Update(physical);
+					}
+					_context.SaveChanges();
+
+					// 体力・運動能力結果データ挿入
+					bool capContains =_context.CapacityResult.Any(phy => (phy.ID == id && phy.MeasureDay == inputData.MeasureDay));
+					CapacityResult capacity = new CapacityResult
+					{
+						ID = id,
+						MeasureDay = (DateTime)inputData.MeasureDay,
+						Grade = inputData.Grade,
+						Sex = inputData.Sex,
+						SportsType = inputData.SportsType,
+						Run20m = inputData.Run20m,
+						ProAgility = inputData.ProAgility,
+						StandJump = inputData.StandJump,
+						RepetJump = inputData.RepetJump,
+						VerticalJump = inputData.VerticalJump,
+						GCTime = inputData.GCTime,
+						JumpHeight = inputData.JumpHeight
+					};
+
+					// 体力・運動能力ポイント設定
+					capacity = SetCapacityPoint(capacity);
+
+					if (!capContains)
+					{
+						_context.CapacityResult.Add(capacity);
+					}
+					else
+					{
+						_context.CapacityResult.Update(capacity);
+					}
+					_context.SaveChanges();
+
+					transaction.Commit();
+					bResult = true;
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex);
+					transaction.Rollback();
+				}
+			}
+			return bResult;
+		}
+
+		/// <summary>
+		/// 体力・運動能力ポイント設定
+		/// </summary>
+		/// <param name="capacity"></param>
+		/// <returns></returns>
+		CapacityResult SetCapacityPoint(CapacityResult capacity)
+		{
+			// リバウウンドジャンプ指数計算
+			capacity.ReboundJumpIndex = ((capacity.JumpHeight != null) && (capacity.GCTime != null))? capacity.JumpHeight / capacity.GCTime : null;
+
+			// 平均値/2乗和/データ数取得
+			var capAvgSqrSum = _context.CapacityResult
+			.Where(caprt => (caprt.Run20m != null && caprt.ProAgility != null && caprt.StandJump != null && caprt.RepetJump != null && caprt.VerticalJump != null && caprt.ReboundJumpIndex != null))
+			.GroupBy(cap => new { cap.Grade, cap.Sex })
+			.Select(caprt => new
+				{
+					Grade = caprt.Key.Grade,
+					Sex =  caprt.Key.Sex,
+					Run20mAvg = caprt.Average(capav => capav.Run20m),
+					ProAgilityAvg = caprt.Average(capav => capav.ProAgility),
+					StandJumpAvg = caprt.Average(capav => capav.StandJump),
+					RepetJumpAvg = caprt.Average(capav => capav.RepetJump),
+					VerticalJumpAvg = caprt.Average(capav => capav.VerticalJump),
+					ReboundJumpIndexAvg = caprt.Average(capav => capav.ReboundJumpIndex),
+					Run20mSqrSum = caprt.Sum(capss => capss.Run20m * capss.Run20m),
+					ProAgilitySqrSum = caprt.Sum(capss => capss.ProAgility * capss.ProAgility),
+					StandJumpSqrSum = caprt.Sum(capss => capss.StandJump * capss.StandJump),
+					RepetJumpSqrSum = caprt.Sum(capss => capss.RepetJump * capss.RepetJump),
+					VerticalJumpSqrSum = caprt.Sum(capss => capss.VerticalJump * capss.VerticalJump),
+					ReboundJumpIndexSqrSum = caprt.Sum(capss => capss.ReboundJumpIndex * capss.ReboundJumpIndex),
+					Count = caprt.Count()
+				}
+			)
+			.Where(caprt => (caprt.Grade == capacity.Grade && caprt.Sex == capacity.Sex))
+			.FirstOrDefault();
+
+			// 標準偏差計算
+			float Run20mStdevp = (float)Math.Sqrt((double)capAvgSqrSum.Run20mSqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.Run20mAvg * (double)capAvgSqrSum.Run20mAvg);
+			float ProAgilityStdevp = (float)Math.Sqrt((double)capAvgSqrSum.ProAgilitySqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.ProAgilityAvg * (double)capAvgSqrSum.ProAgilityAvg);
+			float StandJumpStdevp = (float)Math.Sqrt((double)capAvgSqrSum.StandJumpSqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.StandJumpAvg * (double)capAvgSqrSum.StandJumpAvg);
+			float RepetJumpStdevp = (float)Math.Sqrt((double)capAvgSqrSum.RepetJumpSqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.RepetJumpAvg * (double)capAvgSqrSum.RepetJumpAvg);
+			float VerticalJumpStdevp = (float)Math.Sqrt((double)capAvgSqrSum.VerticalJumpSqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.VerticalJumpAvg * (double)capAvgSqrSum.VerticalJumpAvg);
+			float ReboundJumpIndexStdevp = (float)Math.Sqrt((double)capAvgSqrSum.ReboundJumpIndexSqrSum / (double)capAvgSqrSum.Count - (double)capAvgSqrSum.ReboundJumpIndexAvg * (double)capAvgSqrSum.ReboundJumpIndexAvg);
+
+			// 体力・運動能力ポイント計算
+			capacity.Run20mPoint = (capacity.Run20m != null)? (float)(((capacity.Run20m - capAvgSqrSum.Run20mAvg) / Run20mStdevp) * (-1) + 2.5) : null;
+			capacity.ProAgilityPoint = (capacity.ProAgility != null)? (float)(((capacity.ProAgility - capAvgSqrSum.ProAgilityAvg) / ProAgilityStdevp) * (-1) + 2.5) : null;
+			capacity.StandJumpPoint = (capacity.StandJump != null)? (float)(((capacity.StandJump - capAvgSqrSum.StandJumpAvg) / StandJumpStdevp) + 2.5) : null;
+			capacity.RepetJumpPoint = (capacity.RepetJump != null)? (float)(((capacity.RepetJump - capAvgSqrSum.RepetJumpAvg) / RepetJumpStdevp) + 2.5) : null;
+			capacity.VerticalJumpPoint = (capacity.VerticalJump != null)? (float)(((capacity.VerticalJump - capAvgSqrSum.VerticalJumpAvg) / VerticalJumpStdevp) + 2.5) : null;
+			capacity.ReboundJumpIndexPoint = (capacity.ReboundJumpIndex != null)? (float)(((capacity.ReboundJumpIndex - capAvgSqrSum.ReboundJumpIndexAvg) / ReboundJumpIndexStdevp) + 2.5) : null;
+
+			return capacity;
+		}
 	}
 }
